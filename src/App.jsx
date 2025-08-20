@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router';
 import Home from './routes/Home/Home';
-import Navigation from './routes/navigation/Navigation';
+import Navigation from './routes/Navigation/Navigation';
 import SignIn from './routes/sign-in/Sign-In';
 
 const Shop = () => {
