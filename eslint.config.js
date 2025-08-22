@@ -42,7 +42,7 @@ export default [
       'comma-dangle': ['error', 'never'],  // считать ли ошибкой висячую запятую. never - никогда не допускать их, always - всегда висячая запятая должна стоять
       'quotes': ['error', 'single'],  // форматирование кавычек, все в single
       'react/prop-types': 0,  // отключает пропсы
-      'indent': ['error', 2]  // 2 пробела
+      'indent': ['error', 2, { 'SwitchCase': 1 }]  // 2 пробела
     }
   }
 ];
