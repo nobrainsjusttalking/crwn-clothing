@@ -1,9 +1,10 @@
 import { Routes, Route } from 'react-router';
-import Home from './routes/Home/Home';
+
+import Home from './routes/Home/Home.jsx';
 import Navigation from './routes/Navigation/Navigation.jsx';
-import Authentication from './routes/Authentication/Authentication';
-import Shop from './routes/Shop/Shop';
-import Checkout from './routes/Checkout/Checkout';
+import Authentication from './routes/Authentication/Authentication.jsx';
+import Shop from './routes/Shop/Shop.jsx';
+import Checkout from './routes/Checkout/Checkout.jsx';
 
 const App = () => {
   return (
