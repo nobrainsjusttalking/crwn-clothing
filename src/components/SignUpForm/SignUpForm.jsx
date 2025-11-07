@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-import FormInput from '../FormInput/FormInput';
-import Button from '../Button/Button';
+import FormInput from '../FormInput/FormInput.jsx';
+import Button from '../Button/Button.jsx';
 
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
 
-import './SignUpForm.scss';
+import { SignUpContainer } from './SignUpForm.js';
 
 const defaultFormFields = {
   displayName: '',
@@ -31,7 +31,7 @@ const SignUpForm = () => {
     }
 
     try {
-      let {user} = await createAuthUserWithEmailAndPassword(email, password);
+      const {user} = await createAuthUserWithEmailAndPassword(email, password);
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
     } catch (error) {
@@ -46,11 +46,11 @@ const SignUpForm = () => {
   const handleChange = (event) => {
     const {name, value} = event.target;
 
-    setFormFields({...formFields, [name]: value });
+    setFormFields({ ...formFields, [name]: value });
   };
 
   return (
-    <div className="sign-up-container">
+    <SignUpContainer>
       <h2>Don't have an account?</h2>
       <span>Sign up with your email and password</span>
 
@@ -89,7 +89,7 @@ const SignUpForm = () => {
 
         <Button type="submit">Sign Up</Button>
       </form>
-    </div>
+    </SignUpContainer>
   );
 };
 
