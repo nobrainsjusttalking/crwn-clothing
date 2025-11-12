@@ -2,23 +2,19 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router';
 
+import { Provider } from 'react-redux';
+import { store } from './store/store.js';
+
 import App from './App.jsx';
-import { UserProvider } from './contexts/UserContext';
-import { CategoriesProvider } from './contexts/CategoriesContext.jsx';
-import { CartProvider } from './contexts/CartContext.jsx';
 
 import './index.scss';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <UserProvider>
-        <CategoriesProvider>
-          <CartProvider>
-            <App />
-          </CartProvider>
-        </CategoriesProvider>
-      </UserProvider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </StrictMode>
 );
